@@ -13,6 +13,7 @@ public class NewJFrame extends javax.swing.JFrame {
     // variables
     
     double operando1 = 0;
+    String tipoOperacion = "";
     
     /**
      * Creates new form NewJFrame
@@ -151,14 +152,39 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         BotonSuma.setText("+");
+        BotonSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonSumaActionPerformed(evt);
+            }
+        });
 
         BotonResta.setText("-");
+        BotonResta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRestaActionPerformed(evt);
+            }
+        });
 
         BotonMultiplicacion.setText("*");
+        BotonMultiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonMultiplicacionActionPerformed(evt);
+            }
+        });
 
         BotonDivision.setText("/");
+        BotonDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonDivisionActionPerformed(evt);
+            }
+        });
 
         BotonPorcentaje.setText("%");
+        BotonPorcentaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonPorcentajeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -262,8 +288,9 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         // CLEAR 
     
-        
-        
+        operando1 = 0;
+        tipoOperacion = "";
+        Display.setText("0");
         
     }//GEN-LAST:event_ClearActionPerformed
 
@@ -281,9 +308,11 @@ public class NewJFrame extends javax.swing.JFrame {
             //almacenar valor actual
             operando1 = Double.valueOf(Display.getText());
     
+            Display.setText("0");
             
+            tipoOperacion = _operacion;
     }
-    
+
     
     private void Boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton1ActionPerformed
         // TODO add your handling code here:
@@ -295,6 +324,43 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void BotonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCalcularActionPerformed
         // TODO add your handling code here:
+        
+        double operando2 = Double.valueOf(Display.getText());
+        
+        // en caso de suma
+        if(tipoOperacion.equals("+")){
+        
+            operando1 = operando1 + operando2;
+   
+        }
+        
+        if(tipoOperacion.equals("-")){
+        
+            operando1 = operando1 - operando2;
+   
+        }
+        
+        if(tipoOperacion.equals("*")){
+        
+            operando1 = operando1 * operando2;
+   
+        }
+        
+        if(tipoOperacion.equals("/")){
+        
+            operando1 = operando1 / operando2;
+   
+        }
+        
+        if(tipoOperacion.equals("%")){
+        
+            operando1 = operando1 % operando2;
+   
+        }
+        //mostrat resultado en pantalla
+        
+        Display.setText(String.valueOf(operando1));
+        
     }//GEN-LAST:event_BotonCalcularActionPerformed
 
     private void BotonComaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonComaActionPerformed
@@ -340,6 +406,31 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         pintarNumero("0");
     }//GEN-LAST:event_Boton0ActionPerformed
+
+    private void BotonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSumaActionPerformed
+        // TODO add your handling code here:
+        operacionPulsada("+");
+    }//GEN-LAST:event_BotonSumaActionPerformed
+
+    private void BotonRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRestaActionPerformed
+        // TODO add your handling code here:
+        operacionPulsada("-");
+    }//GEN-LAST:event_BotonRestaActionPerformed
+
+    private void BotonMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMultiplicacionActionPerformed
+        // TODO add your handling code here:
+        operacionPulsada("*");
+    }//GEN-LAST:event_BotonMultiplicacionActionPerformed
+
+    private void BotonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDivisionActionPerformed
+        // TODO add your handling code here:
+        operacionPulsada("/");
+    }//GEN-LAST:event_BotonDivisionActionPerformed
+
+    private void BotonPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonPorcentajeActionPerformed
+        // TODO add your handling code here:
+        operacionPulsada("%");
+    }//GEN-LAST:event_BotonPorcentajeActionPerformed
 
     /**
      * @param args the command line arguments

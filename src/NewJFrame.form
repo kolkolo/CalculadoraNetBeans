@@ -261,26 +261,41 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonSumaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonResta">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonRestaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonMultiplicacion">
       <Properties>
         <Property name="text" type="java.lang.String" value="*"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonMultiplicacionActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonDivision">
       <Properties>
         <Property name="text" type="java.lang.String" value="/"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonDivisionActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonPorcentaje">
       <Properties>
         <Property name="text" type="java.lang.String" value="%"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonPorcentajeActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
