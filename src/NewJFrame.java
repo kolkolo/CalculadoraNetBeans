@@ -331,35 +331,37 @@ public class NewJFrame extends javax.swing.JFrame {
         if(tipoOperacion.equals("+")){
         
             operando1 = operando1 + operando2;
-   
+            Display.setText(String.valueOf(operando1));
         }
         
         if(tipoOperacion.equals("-")){
         
             operando1 = operando1 - operando2;
-   
+            Display.setText(String.valueOf(operando1));
         }
         
         if(tipoOperacion.equals("*")){
         
             operando1 = operando1 * operando2;
-   
+            Display.setText(String.valueOf(operando1));
         }
         
-        if(tipoOperacion.equals("/")){
+        if(tipoOperacion.equals("/") && operando2 != 0){
         
             operando1 = operando1 / operando2;
-   
+            Display.setText(String.valueOf(operando1));
+        } else if(tipoOperacion.equals("/") && operando2 == 0){
+            Display.setText("Error matemagico");
         }
         
         if(tipoOperacion.equals("%")){
         
             operando1 = operando1 % operando2;
-   
+            Display.setText(String.valueOf(operando1));
         }
         //mostrat resultado en pantalla
         
-        Display.setText(String.valueOf(operando1));
+        
         
     }//GEN-LAST:event_BotonCalcularActionPerformed
 
